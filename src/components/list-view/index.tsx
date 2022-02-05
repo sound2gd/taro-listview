@@ -261,7 +261,7 @@ class ListView extends Component<Props, State> {
       launchFooterLoading = false
     } = launch as Launch;
 
-    const { canScrollY, blockStyle, downLoading, dampText } = this.state;
+    const { canScrollY, blockStyle, downLoading, dampText, scrollTop } = this.state;
 
     const showChildren = !(isEmpty || isError); // 展示children内容
 
@@ -280,6 +280,7 @@ class ListView extends Component<Props, State> {
             "downLoadingStyle"} scrollView autoHeight`}
           style={{ ...style }}
           scrollY={canScrollY}
+          scrollTop={scrollTop}
           lowerThreshold={80}
           onScrollToLower={this.handleScrollToLower}
           scrollWithAnimation
